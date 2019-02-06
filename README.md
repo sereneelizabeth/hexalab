@@ -1,4 +1,4 @@
-# lab-hexagon-java
+# hexalab
 
 This is a starter project based on:
 
@@ -9,18 +9,13 @@ This is a starter project based on:
 Inspired by the patterns:
 
 * Hexagonal Architecture
-* CQRS
-* Domain event
 
 The Hexagonal pattern is described by Alistair Cockburn in his blog:
 
 *“Allow an application to equally be driven by users, programs, automated test or batch scripts, and to be developed and tested in isolation from its eventual run-time devices and databases"* 
 
-You can find o better information about the design of this solution in the presentation [Hexagonal Architecture ](http://fabricioepa.wordpress.com/2015/02/04/hexagonal-architecture)
-
-I should remeber you these patterns are not exclusively related to the Java technologies and frameworks.
-
-# The project structure
+You can find better information about the design of this solution in the presentation [Hexagonal Architecture ](http://fabricioepa.wordpress.com/2015/02/04/hexagonal-architecture)
+he project structure
 
 ### 1. ticketapp (/pom.xml)
  Main parent maven project aggregates all project modules
@@ -39,8 +34,7 @@ I should remeber you these patterns are not exclusively related to the Java tech
  
 The adapters projects (/integration/\*) are dependent on the core-api, they do not know at compilation time the core-application, the concrete core-application will be provided just at runtime by the **Dependency Injection Container**.
 
-# My professional experience using this technique
- 
+
  It was very simple to create a decoupled REST adapter from the core application, it should
  be simple to create another kind of adapter too.
  However, if the application domain is quite BIG or there are many ports and adapters, you will have some overhead to maintain different domains translated from the original application core domain.
